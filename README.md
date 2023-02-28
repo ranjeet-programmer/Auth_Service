@@ -1,23 +1,29 @@
 # AUTH MICROSERVICE
 
-### SETUP THE SEQUELIZE
-
-### To init a sequelize use the below command in terminal in the src folder
+### To init a sequelize use the below command
 
 ```
 npx sequelize init
 
 ```
 
-### Go to the src/config/config.json file and add the following necesarry changes to it
+### To create a database :-
 
-- change the username according to your setup
-- change the password according to your setup
-- run the below command in terminal under the src folder
+```
+npx sequelize db:create
 
-  ```
-  To create a database  npx sequelize db:create
+```
 
-  ```
+### To creare a model :-
 
--
+```
+    Query :- npx sequelize model:generate --name <model_name> --atrribbutes <attributeName:datatype>
+
+    Ex : npx sequelize model:generate --name User --attributes email:String,password:String
+```
+
+### to migrate a model :-
+
+```
+   Query : npx sequelize db:migrate
+```
