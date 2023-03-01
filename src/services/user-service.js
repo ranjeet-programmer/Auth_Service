@@ -41,11 +41,11 @@ class UserService {
 
   async isAuthenticated(token) {
     try {
-      const response = this.verifyToken(token);
-      if (!response) {
+      const isTokenVerified = userService.verifyToken(token);
+      if (!isTokenVerified) {
         throw { error: "Invalid token" };
       }
-      const user = await this.userRepository.getById(response.id);
+      const user = await this.userRepository.getById(isTokenVerified.id);
       if (!user) {
         throw { error: "No user with the corresponding token exists" };
       }
